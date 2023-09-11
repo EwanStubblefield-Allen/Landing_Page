@@ -6,7 +6,7 @@
     <main class="container-fluid">
       <router-view />
     </main>
-    <footer class="container-fluid p-5">
+    <footer class="container-fluid p-5 bg-steel">
       <section class="row justify-content-center fs-5">
         <div class="col-6 d-flex justify-content-around text-center">
           <p class="py-2 w-100 selectable rounded">Home</p>

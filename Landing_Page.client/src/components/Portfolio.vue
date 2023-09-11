@@ -111,7 +111,7 @@
     </div>
   </section>
 
-  <section v-else class="row justify-content-center bg-nurse p-3">
+  <section v-else-if="editable == 4" class="row justify-content-center bg-nurse p-3">
     <div class="col-12 col-sm-4">
       <img src="" alt="Tower">
     </div>
@@ -147,7 +147,7 @@ import { ref } from 'vue'
 
 export default {
   setup() {
-    const editable = ref(4)
+    const editable = ref()
 
     return {
       editable

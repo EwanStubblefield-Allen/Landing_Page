@@ -7,7 +7,7 @@
         <p class="fs-1">Full Stack Developer</p>
       </div>
       <div>
-        <p class="fs-5">Find Me:</p>
+        <p class="fs-4">Find Me:</p>
         <div class="d-flex">
           <a href="https://github.com/EwanStubblefield-Allen" class="banner m-2 elevation-5" target="_blank">
             <i class="mdi mdi-github fs-3 text-turquoise"></i>
@@ -21,16 +21,19 @@
   </section>
 
   <Portfolio />
+
+  <Contact />
 </template>
 
 <script>
 import Portfolio from '../components/Portfolio.vue'
+import Contact from '../components/Contact.vue'
 
 export default {
   setup() {
     return {}
   },
-  components: { Portfolio }
+  components: { Portfolio, Contact }
 }
 </script>
 
