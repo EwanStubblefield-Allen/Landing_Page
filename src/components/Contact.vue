@@ -1,5 +1,5 @@
 <template>
-  <section class="row px-5 py-4 justify-content-around align-items-center">
+  <section id="contact" class="row px-5 py-4 justify-content-around align-items-center">
     <div class="col-12 col-md-6 bg-steel rounded elevation-5 p-3">
       <p class="fs-3 text-nurse">Email Me</p>
       <form @submit.prevent="sendEmail()">
@@ -19,7 +19,7 @@
       </form>
     </div>
 
-    <div class="col-12 col-md-4 bg-steel text-nurse rounded elevation-5 p-3">
+    <div class="col-12 col-md-5 col-lg-4 bg-steel text-nurse rounded elevation-5 my-3 p-3">
       <p>Phone: +1 (208) 949-0677</p>
       <p>Email: stubblefieldallenewan@gmail.com</p>
 
@@ -69,5 +69,9 @@ export default {
 
   button:hover {
     transform: scale(1.01);
+  }
+
+  #contact {
+    scroll-margin-top: 64px;
   }
 </style>

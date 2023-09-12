@@ -6,12 +6,12 @@
     <main class="container-fluid">
       <router-view />
     </main>
-    <footer class="container-fluid p-5 bg-steel">
+    <footer class="container-fluid p-5 bg-steel text-turquoise">
       <section class="row justify-content-center fs-5">
-        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-around text-center">
-          <p class="py-2 w-100 selectable rounded">Home</p>
-          <p class="py-2 w-100 selectable rounded">Portfolio</p>
-          <p class="py-2 w-100 selectable rounded">Contact Me</p>
+        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-around align-items-center text-center">
+          <p @click="goTo('home')" class="py-2 w-100 selectable rounded">Home</p>
+          <p @click="goTo('portfolio')" class="py-2 w-100 selectable rounded">Portfolio</p>
+          <p @click="goTo('contact')" class="py-2 w-100 selectable rounded">Contact Me</p>
         </div>
         <hr class="text-nurse my-3">
         <div class="col-12 text-center pt-4">
@@ -32,7 +32,15 @@ import Animation from './components/Animation.vue'
 export default {
   setup() {
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+
+      goTo(location) {
+        if (location == 'home') {
+          document.documentElement.scrollTop = 0
+          return
+        }
+        document.getElementById(location).scrollIntoView({ behavior: 'smooth' })
+      }
     }
   },
   components: { Navbar, Animation }
@@ -58,11 +66,6 @@ export default {
     margin: 0;
     overflow-x: hidden;
     background-repeat: no-repeat;
-  }
-
-  footer {
-    font-weight: bold;
-    text-shadow: 0px 3px 5px white;
   }
 
   p {
@@ -97,10 +100,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .25s;
   }
 
   .banner:hover {
-    transition: .25s;
     transform: scale(1.05) translateY(-2.5px);
 
     i {

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-steel px-3">
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel px-3">
     <!-- <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
@@ -11,8 +11,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ms-auto">
         <li>
-          <div class="btn text-success lighten-30 selectable text-uppercase">
-            About
+          <div @click="goTo('home')" class="btn text-turquoise lighten-30 selectable text-uppercase">
+            Home
+          </div>
+          <div @click="goTo('portfolio')" class="btn text-turquoise lighten-30 selectable text-uppercase">
+            Portfolio
+          </div>
+          <div @click="goTo('contact')" class="btn text-turquoise lighten-30 selectable text-uppercase">
+            Contact
           </div>
         </li>
       </ul>
@@ -27,7 +33,15 @@
 
 export default {
   setup() {
-    return {}
+    return {
+      goTo(location) {
+        if (location == 'home') {
+          document.documentElement.scrollTop = 0
+          return
+        }
+        document.getElementById(location).scrollIntoView({ behavior: 'smooth' })
+      }
+    }
   }
   // components: { Login }
 }
@@ -43,9 +57,13 @@ export default {
   }
 
   .navbar-nav .router-link-exact-active {
-    border-bottom: 2px solid var(--bs-success);
+    border-bottom: 2px solid var(--turquoise);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  .text-turquoise:hover {
+    color: var(--turquoise);
   }
 
   @media screen and (min-width: 768px) {

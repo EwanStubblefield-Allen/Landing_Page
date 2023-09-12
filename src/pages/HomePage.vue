@@ -1,5 +1,5 @@
 <template>
-  <section class="row justify-content-center">
+  <section id="hero" class="row justify-content-center">
     <div class="col-10 d-flex flex-column justify-content-between hero py-5">
       <div></div>
       <div>
