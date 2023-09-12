@@ -22,10 +22,15 @@
   </section>
 
   <section v-if="editable == 1" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-sm-4">
-      <img src="" alt="CodeFitness">
+    <div class="col-12 col-md-8 col-lg-6 position-relative">
+      <img class="portfolio-img w-100" src="../assets/img/CodeFitness.png" alt="CodeFitness">
+      <div class="d-flex justify-content-around icon-position">
+        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+      </div>
     </div>
-    <div class="col-12 col-md-6">
+
+    <div class="col-12 col-md-4">
       <p class="fs-3 fw-bold text-decoration-underline">CodeFitness</p>
 
       <section class="row justify-content-around">
@@ -52,10 +57,15 @@
   </section>
 
   <section v-else-if="editable == 2" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-sm-4">
-      <img src="" alt="Keepr">
+    <div class="col-12 col-md-8 col-lg-6 position-relative">
+      <img class="portfolio-img w-100" src="../assets/img/CodeFitness.png" alt="CodeFitness">
+      <div class="d-flex justify-content-around icon-position">
+        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+      </div>
     </div>
-    <div class="col-12 col-md-6">
+
+    <div class="col-12 col-md-4">
       <p class="fs-3 fw-bold text-decoration-underline">Keepr</p>
 
       <section class="row justify-content-around">
@@ -82,10 +92,15 @@
   </section>
 
   <section v-else-if="editable == 3" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-sm-4">
-      <img src="" alt="All-Spice">
+    <div class="col-12 col-md-8 col-lg-6 position-relative">
+      <img class="portfolio-img w-100" src="../assets/img/CodeFitness.png" alt="CodeFitness">
+      <div class="d-flex justify-content-around icon-position">
+        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+      </div>
     </div>
-    <div class="col-12 col-md-6">
+
+    <div class="col-12 col-md-4">
       <p class="fs-3 fw-bold text-decoration-underline">All-Spice</p>
 
       <section class="row justify-content-around">
@@ -112,10 +127,15 @@
   </section>
 
   <section v-else-if="editable == 4" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-sm-4">
-      <img src="" alt="Tower">
+    <div class="col-12 col-md-8 col-lg-6 position-relative">
+      <img class="portfolio-img w-100" src="../assets/img/CodeFitness.png" alt="CodeFitness">
+      <div class="d-flex justify-content-around icon-position">
+        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+      </div>
     </div>
-    <div class="col-12 col-md-6">
+
+    <div class="col-12 col-md-4">
       <p class="fs-3 fw-bold text-decoration-underline">Tower</p>
 
       <section class="row justify-content-around">
@@ -169,5 +189,53 @@ export default {
   .active {
     background: linear-gradient(145deg, #000000, #23272b);
     box-shadow: 10px 10px 19px #000000, -10px -10px 19px #262a2e;
+  }
+
+  .icon-position {
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: calc(50% - (120px / 2));
+    left: 0;
+
+    a {
+      text-shadow: 0px 3px 5px white;
+      font-size: 5em;
+      opacity: 0;
+    }
+  }
+
+  .position-relative:hover {
+    .mdi-play-box {
+      animation: slideIn .5s ease-in-out forwards;
+    }
+
+    .mdi-github {
+      animation: slideIn2 .5s ease-in-out forwards;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-200%);
+    }
+
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideIn2 {
+    0% {
+      opacity: 0;
+      transform: translateX(200%);
+    }
+
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
   }
 </style>

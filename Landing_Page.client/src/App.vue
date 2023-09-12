@@ -8,11 +8,12 @@
     </main>
     <footer class="container-fluid p-5 bg-steel">
       <section class="row justify-content-center fs-5">
-        <div class="col-6 d-flex justify-content-around text-center">
+        <div class="col-12 col-md-8 col-lg-6 d-flex justify-content-around text-center">
           <p class="py-2 w-100 selectable rounded">Home</p>
           <p class="py-2 w-100 selectable rounded">Portfolio</p>
           <p class="py-2 w-100 selectable rounded">Contact Me</p>
         </div>
+        <hr class="text-nurse my-3">
         <div class="col-12 text-center pt-4">
           <p>© All rights reserved by Ewan Stubblefield-Allen</p>
         </div>
@@ -86,5 +87,24 @@ export default {
 
   .text-turquoise {
     color: var(--turquoise)
+  }
+
+  .banner {
+    height: 4em;
+    width: 4em;
+    border-radius: 10px;
+    text-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner:hover {
+    transition: .25s;
+    transform: scale(1.05) translateY(-2.5px);
+
+    i {
+      color: var(--boston);
+    }
   }
 </style>

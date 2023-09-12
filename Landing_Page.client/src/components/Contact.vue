@@ -1,5 +1,5 @@
 <template>
-  <section class="row px-5 py-4">
+  <section class="row px-5 py-4 justify-content-around align-items-center">
     <div class="col-12 col-md-6 bg-steel rounded elevation-5 p-3">
       <p class="fs-3 text-nurse">Email Me</p>
       <form @submit.prevent="sendEmail()">
@@ -12,11 +12,26 @@
           <label for="floatingEmail">Email</label>
         </div>
         <div class="form-floating my-3">
-          <textarea v-model="editable.message" id="floatingMessage" class="form-control" type="text" placeholder="Message..." style="height: 10em"> required></textarea>
+          <textarea v-model="editable.message" id="floatingMessage" class="form-control" type="text" placeholder="Message..." style="height: 15em"> required></textarea>
           <label for="floatingMessage">Message</label>
         </div>
-        <button class="btn btn-light" type="submit">Send</button>
+        <button class="btn btn-light fw-bold w-100" type="submit">Send Message</button>
       </form>
+    </div>
+
+    <div class="col-12 col-md-4 bg-steel text-nurse rounded elevation-5 p-3">
+      <p>Phone: +1 (208) 949-0677</p>
+      <p>Email: stubblefieldallenewan@gmail.com</p>
+
+      <p>Find Me:</p>
+      <div class="d-flex justify-content-around">
+        <a href="https://github.com/EwanStubblefield-Allen" class="banner bg-nurse m-2 elevation-5" target="_blank">
+          <i class="mdi mdi-github fs-3 text-turquoise"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ewan-stubblefield-allen/" target="_blank" class="banner bg-nurse m-2 elevation-5">
+          <i class="mdi mdi-linkedin fs-3 text-turquoise"></i>
+        </a>
+      </div>
     </div>
   </section>
 </template>
@@ -40,10 +55,19 @@ export default {
           }, (error) => {
             Pop.error(error.text, '[EMAIL FAILED TO SEND!!]')
           })
+        editable.value = {}
       }
     }
   }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  button {
+    box-shadow: 0px 3px 5px white;
+  }
+
+  button:hover {
+    transform: scale(1.01);
+  }
+</style>

@@ -9,10 +9,10 @@
       <div>
         <p class="fs-4">Find Me:</p>
         <div class="d-flex">
-          <a href="https://github.com/EwanStubblefield-Allen" class="banner m-2 elevation-5" target="_blank">
+          <a href="https://github.com/EwanStubblefield-Allen" class="banner bg-steel m-2 elevation-5" target="_blank">
             <i class="mdi mdi-github fs-3 text-turquoise"></i>
           </a>
-          <a href="https://www.linkedin.com/in/ewan-stubblefield-allen/" target="_blank" class="banner m-2 elevation-5">
+          <a href="https://www.linkedin.com/in/ewan-stubblefield-allen/" target="_blank" class="banner bg-steel m-2 elevation-5">
             <i class="mdi mdi-linkedin fs-3 text-turquoise"></i>
           </a>
         </div>
@@ -42,24 +42,5 @@ export default {
     height: var(--main-height);
     font-weight: bold;
     text-shadow: 0px 3px 5px white;
-  }
-
-  .banner {
-    height: 4em;
-    width: 4em;
-    background-color: var(--steel);
-    border-radius: 10px;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .banner:hover {
-    transform: scale(1.05);
-
-    i {
-      color: var(--boston);
-    }
   }
 </style>
