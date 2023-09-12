@@ -42,4 +42,4 @@ jobs:
         run: |
           # Add any commands required to restart your application on the EC2 instance
           # Example: 
-          sudo ssh -i ~/.ssh/id_rsa.pem $EC2_USERNAME@$EC2_IP_ADDRESS "cd $ROOT && pnpm run build && sudo pm2 restart landing"
+          sudo ssh -i ~/.ssh/id_rsa.pem $EC2_USERNAME@$EC2_IP_ADDRESS "cd $ROOT && sudo pm2 restart landing"
