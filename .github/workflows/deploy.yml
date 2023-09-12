@@ -9,7 +9,6 @@ env:
   EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
   EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
   EC2_PEM_KEY: ${{ secrets.EC2_PEM_KEY }}
-  ENV: ${{ secrets.ENV }}
   ROOT: "Landing_Page"
 
 jobs:
@@ -32,6 +31,7 @@ jobs:
           sudo ssh -i ~/.ssh/id_rsa.pem -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_IP_ADDRESS "
             sudo pm2 stop landing
             sudo rm -rf $ROOT
+            mkdir -p $ROOT
             "
 
       - name: Copy your code to the EC2📔
