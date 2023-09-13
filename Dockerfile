@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE 8080
 
 # Define the command to start your Vue.js application
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "serve" ]
