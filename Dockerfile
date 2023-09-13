@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:18 AS build
+FROM node:18
 
 # Set the working directory in the container
 WORKDIR /app
@@ -7,23 +7,17 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
+# Copy the entire project directory to the container
+COPY . ./
+
 # Install project dependencies
 RUN npm install
-
-# Copy the entire project directory to the container
-COPY . .
 
 # Build the Vue.js application
 RUN npm run build
 
-# Use a lightweight web server to serve the Vue.js application
-FROM nginx:alpine
-
-# Copy the built application files to the Nginx web server directory
-COPY --from=build /Landing_Page/docs /usr/share/nginx/html
-
-# Expose port 80 for the Nginx web server
+# Expose the port your Vue.js app will run on (default is 8080)
 EXPOSE 8080
 
-# Start the Nginx web server
-CMD ["nginx", "-g", "daemon off;"]
+# Define the command to start your Vue.js application
+CMD [ "npm", "run", "serve" ]
