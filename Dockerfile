@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built application files to the Nginx web server directory
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build ./docs /usr/share/nginx/html
 
 # Expose port 80 for the Nginx web server
 EXPOSE 8080
