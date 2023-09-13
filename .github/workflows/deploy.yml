@@ -26,8 +26,7 @@ jobs:
         run: |
           docker buildx create --use
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          cd ./$ROOT
-          docker buildx build --platform linux/amd64 -t $DOCKER_USERNAME/landing:$DOCKER_IMAGE_TAG --push .
+          docker buildx build --file ./Dockerfile --platform linux/amd64 -t $DOCKER_USERNAME/landing:$DOCKER_IMAGE_TAG --push .
 
       - name: SSH Deploy 📔
         env:
