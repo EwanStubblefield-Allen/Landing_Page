@@ -21,7 +21,6 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
-          ROOT: Landing_Page
           DOCKER_IMAGE_TAG: latest
         run: |
           docker buildx create --use
@@ -33,6 +32,7 @@ jobs:
           EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
           EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
           EC2_PEM_KEY: ${{ secrets.EC2_PEM_KEY }}
+          ROOT: Landing_Page
         run: |
           mkdir -p ~/.ssh
           echo "$EC2_PEM_KEY" > ~/.ssh/id_rsa.pem
