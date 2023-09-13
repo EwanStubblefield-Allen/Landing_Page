@@ -4,42 +4,41 @@ on:
   push:
     branches:
       - main
-env:
-  # Setting an environment variable with the value of a configuration variable
-  EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
-  EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
-  EC2_PEM_KEY: ${{ secrets.EC2_PEM_KEY }}
-  ROOT: "Landing_Page"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Create a file for your 🔑 on the action-machine
+      - name: Set up Docker Buildx 🤖
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and Push Docker Image 🐳
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
+          ROOT: Landing_Page
+          DOCKER_IMAGE_TAG: latest
+        run: |
+          docker buildx create --use
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          cd ./$ROOT
+          docker buildx build --platform linux/amd64 -t $DOCKER_USERNAME/landing:$DOCKER_IMAGE_TAG --push .
+
+      - name: SSH Deploy 📔
+        env:
+          EC2_IP_ADDRESS: ${{ secrets.EC2_IP_ADDRESS }}
+          EC2_USERNAME: ${{ secrets.EC2_USERNAME }}
+          EC2_PEM_KEY: ${{ secrets.EC2_PEM_KEY }}
         run: |
           mkdir -p ~/.ssh
           echo "$EC2_PEM_KEY" > ~/.ssh/id_rsa.pem
           chmod 600 ~/.ssh/id_rsa.pem
 
-      - name: Cleanup 🧹
-        run: |
-          sudo ssh -i ~/.ssh/id_rsa.pem -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_IP_ADDRESS "
-            sudo pm2 stop landing
-            sudo rm -rf $ROOT
-            mkdir -p $ROOT
-            "
-
-      - name: Copy your code to the EC2📔
-        run: |
-          sudo GLOBIGNORE='.git' scp -i ~/.ssh/id_rsa.pem -o StrictHostKeyChecking=no -r $GITHUB_WORKSPACE/* $EC2_USERNAME@$EC2_IP_ADDRESS:~/$ROOT
-
-      - name: Restart the EC2 🔃
-        run: |
-          # Add any commands required to restart your application on the EC2 instance
-          # Example: 
-          sudo ssh -i ~/.ssh/id_rsa.pem $EC2_USERNAME@$EC2_IP_ADDRESS "cd $ROOT && sudo pm2 restart landing"
+          # Replace "path/to/your/docker-compose.yml" with your actual Docker Compose file path
+          scp -i ~/.ssh/id_rsa.pem -o StrictHostKeyChecking=no -r ~/$ROOT/docker-compose.yml $EC2_USERNAME@$EC2_IP_ADDRESS:~/$ROOT/.
+          sudo ssh -i ~/.ssh/id_rsa.pem -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_IP_ADDRESS "sudo docker-compose -f ~/$ROOT/docker-compose.yml up -d"
