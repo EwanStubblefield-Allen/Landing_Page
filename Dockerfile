@@ -5,13 +5,13 @@ FROM node:14
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the container
-COPY package*.json ./
+# COPY package*.json ./ Redundant?
+
+# Copy the entire project directory to the container
+COPY . ./
 
 # Install project dependencies
 RUN npm install
-
-# Copy the entire project directory to the container
-COPY . .
 
 # Build the Vue.js application
 RUN npm run build
