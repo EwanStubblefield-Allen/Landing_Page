@@ -3,4 +3,4 @@ services:
   web:
     image: ewanstubblefieldallen/landing:latest
     ports:
-      - "8080:8080"
+      - "8080:80"
