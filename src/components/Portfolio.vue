@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-10 col-lg-4">
       <p class="fs-3 fw-bold text-decoration-underline">CodeFitness</p>
       <p>CodeFitness is gamified fitness application that focuses on making working out enjoyable, especially for those who are inexperienced. Collaborated with <a href="https://www.linkedin.com/in/faith-morgan-94686b289" target="_blank">Faith Morgan</a>, <a href="https://linkedin.com/in/jasper-delight-a00771122" target="_blank">Jasper Delight</a>, <a href="https://www.linkedin.com/in/jwalk99star/" target="_blank">Joshua Walker</a>, and <a href="http://linkedin.com/in/kyle-peppersack-a39025285" target="_blank">Kyle Peppersack</a>. CodeFitness was deployed live using Render.</p>
 
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-10 col-lg-4">
       <p class="fs-3 fw-bold text-decoration-underline">Keepr</p>
       <p>Keepr is a Pinterest clone that allows users to post images with descriptions known as keeps and allows them to save keeps in a collection called vaults. This application was deployed live using docker and an AWS EC2 instance.</p>
 
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-10 col-lg-4">
       <p class="fs-3 fw-bold text-decoration-underline">All-Spice</p>
       <p>All-Spice is recipe sharing application where users can post and favorite recipes. All-Spice was deployed live using AWS EC2 instance and docker.</p>
 
@@ -141,7 +141,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-10 col-lg-4">
       <p class="fs-3 fw-bold text-decoration-underline">Tower</p>
       <p>Tower is and application where users can post upcoming events that allow them to attend events and comment. This was deployed live using AWS EC2 instance.</p>
 
@@ -216,6 +216,12 @@ export default {
       text-shadow: 0px 3px 5px white;
       font-size: 5em;
       opacity: 0;
+      transition: .25s;
+    }
+
+    a:hover {
+      color: var(--slate);
+      scale: 1.1;
     }
   }
 
