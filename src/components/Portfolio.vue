@@ -22,11 +22,11 @@
   </section>
 
   <section v-if="editable == 1" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative">
+    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/CodeFitness.png" alt="CodeFitness">
       <div class="d-flex justify-content-around icon-position">
-        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
       </div>
     </div>
 
@@ -59,11 +59,11 @@
   </section>
 
   <section v-else-if="editable == 2" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative">
+    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/Keepr.png" alt="Keepr">
       <div class="d-flex justify-content-around icon-position">
-        <a href="https://keepr.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/Final_Checkpoint" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+        <a href="https://keepr.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/Final_Checkpoint" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
       </div>
     </div>
 
@@ -96,11 +96,11 @@
   </section>
 
   <section v-else-if="editable == 3" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative">
+    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/AllSpice.png" alt="AllSpice">
       <div class="d-flex justify-content-around icon-position">
-        <a href="https://all-spice.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise  rounded" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/All_Spice" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+        <a href="https://all-spice.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/All_Spice" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
       </div>
     </div>
 
@@ -133,11 +133,11 @@
   </section>
 
   <section v-else-if="editable == 4" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative">
+    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/Tower.png" alt="Tower">
       <div class="d-flex justify-content-around icon-position">
-        <a href="https://tower.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/Checkpoint6" target="_blank" class="mdi mdi-github text-turquoise selectable" title="GitHub Repo"></a>
+        <a href="https://tower.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/Checkpoint6" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
       </div>
     </div>
 
@@ -227,12 +227,13 @@ export default {
 
   .position-relative {
     height: fit-content;
+    border: 2px dashed black;
+    border-radius: 10px;
     transition: .25s;
   }
 
   .position-relative:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 12px 0 rgba(0, 0, 0, 0.12);
 
     .mdi-play-box {
       animation: slideIn .5s ease-in-out forwards;
