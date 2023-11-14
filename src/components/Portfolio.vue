@@ -28,7 +28,7 @@
     <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/Dragon.png" alt="Dragon Dungeons">
       <div class="d-flex justify-content-around icon-position">
-        <a href="https://dragon.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+        <a href="https://dragons.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
         <a href="https://github.com/EwanStubblefield-Allen/Dragon_Dungeons" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
       </div>
     </div>
