@@ -35,7 +35,7 @@
 
     <div class="col-12 col-md-10 col-lg-4">
       <p class="fs-3 fw-bold text-decoration-underline">Dragon Dungeons</p>
-      <p>Dragon Dungeons is a DnD inspired application. Not only does it allow users to create campaigns and characters, but also manage them reactively. Dragon Dungeons integrates SignalR to allow users to join other campaigns and participate in them with battles and trading. Additionally, it uses openAi to generate character images. This application was deployed live using docker and an AWS EC2 instance.</p>
+      <p>Dragon Dungeons is a DnD inspired application. It allow users to create campaigns and characters and manage them reactively. Dragon Dungeons integrates SignalR to allow users to join other campaigns and participate in battles and trading. Additionally, it uses openAi to generate character images. This application was deployed live using docker and an AWS EC2 instance.</p>
 
       <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
       <section class="row justify-content-around">
