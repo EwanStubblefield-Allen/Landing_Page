@@ -5,23 +5,63 @@
     </div>
     <div class="col-12 p-3">
       <ul class="nav nav-tabs justify-content-around">
-        <li :class="{ 'active': editable == 1 }" @click="editable = 1" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+        <li :class="{ 'active': editable == 'Dragon Dungeons' }" @click="editable = 'Dragon Dungeons'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+          <p class="fs-3">Dragon Dungeons</p>
+        </li>
+        <li :class="{ 'active': editable == 'CodeFitness' }" @click="editable = 'CodeFitness'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
           <p class="fs-3">CodeFitness</p>
         </li>
-        <li :class="{ 'active': editable == 2 }" @click="editable = 2" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+        <li :class="{ 'active': editable == 'Keepr' }" @click="editable = 'Keepr'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
           <p class="fs-3">Keepr</p>
         </li>
-        <li :class="{ 'active': editable == 3 }" @click="editable = 3" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+        <li :class="{ 'active': editable == 'All-Spice' }" @click="editable = 'All-Spice'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
           <p class="fs-3">All-Spice</p>
         </li>
-        <li :class="{ 'active': editable == 4 }" @click="editable = 4" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+        <li :class="{ 'active': editable == 'Tower' }" @click="editable = 'Tower'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
           <p class="fs-3">Tower</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <section v-if="editable == 1" class="row justify-content-center bg-nurse p-3">
+  <section v-if="editable == 'Dragon Dungeons'" class="row justify-content-center bg-nurse p-3">
+    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
+      <img class="w-100 rounded" src="../assets/img/Dragon.png" alt="Dragon Dungeons">
+      <div class="d-flex justify-content-around icon-position">
+        <a href="https://dragon.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+        <a href="https://github.com/EwanStubblefield-Allen/Dragon_Dungeons" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-10 col-lg-4">
+      <p class="fs-3 fw-bold text-decoration-underline">Dragon Dungeons</p>
+      <p>Dragon Dungeons is a DnD inspired application. Not only does it allow users to create campaigns and characters, but also manage them reactively. Dragon Dungeons integrates SignalR to allow users to join other campaigns and participate in them with battles and trading. Additionally, it uses openAi to generate character images. This application was deployed live using docker and an AWS EC2 instance.</p>
+
+      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
+      <section class="row justify-content-around">
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" alt="html symbol" title="C#">
+        </div>
+        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg" alt="html symbol" title="MySQL">
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section v-else-if="editable == 'CodeFitness'" class="row justify-content-center bg-nurse p-3">
     <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/CodeFitness.png" alt="CodeFitness">
       <div class="d-flex justify-content-around icon-position">
@@ -58,7 +98,7 @@
     </div>
   </section>
 
-  <section v-else-if="editable == 2" class="row justify-content-center bg-nurse p-3">
+  <section v-else-if="editable == 'Keepr'" class="row justify-content-center bg-nurse p-3">
     <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/Keepr.png" alt="Keepr">
       <div class="d-flex justify-content-around icon-position">
@@ -95,7 +135,7 @@
     </div>
   </section>
 
-  <section v-else-if="editable == 3" class="row justify-content-center bg-nurse p-3">
+  <section v-else-if="editable == 'All-Spice'" class="row justify-content-center bg-nurse p-3">
     <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/AllSpice.png" alt="AllSpice">
       <div class="d-flex justify-content-around icon-position">
@@ -132,7 +172,7 @@
     </div>
   </section>
 
-  <section v-else-if="editable == 4" class="row justify-content-center bg-nurse p-3">
+  <section v-else-if="editable == 'Tower'" class="row justify-content-center bg-nurse p-3">
     <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
       <img class="w-100 rounded" src="../assets/img/Tower.png" alt="Tower">
       <div class="d-flex justify-content-around icon-position">
@@ -175,7 +215,7 @@ import { ref } from 'vue'
 
 export default {
   setup() {
-    const editable = ref(1)
+    const editable = ref('Dragon Dungeons')
 
     return {
       editable
