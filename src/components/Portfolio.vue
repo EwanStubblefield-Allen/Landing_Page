@@ -5,220 +5,49 @@
     </div>
     <div class="col-12 p-3">
       <ul class="nav nav-tabs justify-content-around">
-        <li :class="{ 'active': editable == 'Dragon Dungeons' }" @click="editable = 'Dragon Dungeons'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
-          <p class="fs-3">Dragon Dungeons</p>
-        </li>
-        <li :class="{ 'active': editable == 'CodeFitness' }" @click="editable = 'CodeFitness'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
-          <p class="fs-3">CodeFitness</p>
-        </li>
-        <li :class="{ 'active': editable == 'Keepr' }" @click="editable = 'Keepr'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
-          <p class="fs-3">Keepr</p>
-        </li>
-        <li :class="{ 'active': editable == 'All-Spice' }" @click="editable = 'All-Spice'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
-          <p class="fs-3">All-Spice</p>
-        </li>
-        <li :class="{ 'active': editable == 'Tower' }" @click="editable = 'Tower'" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
-          <p class="fs-3">Tower</p>
+        <li v-for="p in portfolio" :key="p.name" :class="{ 'active': editable == p.name }" @click="editable = p.name" class="nav-item flex-grow-1 text-center p-3 selectable rounded">
+          <p class="fs-3">{{ p.name }}</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <section v-if="editable == 'Dragon Dungeons'" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
-      <img class="w-100 rounded" src="../assets/img/Dragon.png" alt="Dragon Dungeons">
-      <div class="d-flex justify-content-around icon-position">
-        <a href="https://dragons.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/Dragon_Dungeons" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
+  <div v-for="p in portfolio" :key="p.name">
+    <section v-if="editable == p.name" class="row justify-content-center bg-nurse p-3">
+      <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
+        <img class="w-100 rounded" :src="p.img" :alt="p.name">
+        <div class="d-flex justify-content-around icon-position">
+          <a :href="p.url" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+          <a :href="`https://github.com/EwanStubblefield-Allen/${p.git}`" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
+        </div>
       </div>
-    </div>
 
-    <div class="col-12 col-md-10 col-lg-4">
-      <p class="fs-3 fw-bold text-decoration-underline">Dragon Dungeons</p>
-      <p>Dragon Dungeons is a DnD inspired application. It allow users to create campaigns and characters and manage them reactively. Dragon Dungeons integrates SignalR to allow users to join other campaigns and participate in battles and trading. Additionally, it uses openAi to generate character images. This application was deployed live using docker and an AWS EC2 instance.</p>
+      <div class="col-12 col-md-10 col-lg-4">
+        <p class="fs-3 fw-bold text-decoration-underline">{{ p.name }}</p>
+        <p>{{ p.description }}</p>
 
-      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
-      <section class="row justify-content-around">
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" alt="html symbol" title="C#">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg" alt="html symbol" title="MySQL">
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <section v-else-if="editable == 'CodeFitness'" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
-      <img class="w-100 rounded" src="../assets/img/CodeFitness.png" alt="CodeFitness">
-      <div class="d-flex justify-content-around icon-position">
-        <a href="https://codefitness-16iw.onrender.com/#/" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/CodeFitness" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
+        <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
+        <section class="row justify-content-around">
+          <div v-for="t in p.technologies" :key="t" class="col-6 col-sm-4 col-lg-3 py-3 text-center">
+            <img class="img-fluid icon" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${t[0]}/${t[0]}-plain${t[1]}.svg`" :alt="t" :title="t">
+          </div>
+        </section>
       </div>
-    </div>
-
-    <div class="col-12 col-md-10 col-lg-4">
-      <p class="fs-3 fw-bold text-decoration-underline">CodeFitness</p>
-      <p>CodeFitness is gamified fitness application that focuses on making working out enjoyable, especially for those who are inexperienced. Collaborated with <a href="https://www.linkedin.com/in/faith-morgan-94686b289" target="_blank">Faith Morgan</a>, <a href="https://linkedin.com/in/jasper-delight-a00771122" target="_blank">Jasper Delight</a>, <a href="https://www.linkedin.com/in/jwalk99star/" target="_blank">Joshua Walker</a>, and <a href="http://linkedin.com/in/kyle-peppersack-a39025285" target="_blank">Kyle Peppersack</a>. CodeFitness was deployed live using Render.</p>
-
-      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
-      <section class="row justify-content-around">
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" alt="NodeJS" title="NodeJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" alt="html symbol" title="MongoDB">
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <section v-else-if="editable == 'Keepr'" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
-      <img class="w-100 rounded" src="../assets/img/Keepr.png" alt="Keepr">
-      <div class="d-flex justify-content-around icon-position">
-        <a href="https://keepr.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/Final_Checkpoint" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-10 col-lg-4">
-      <p class="fs-3 fw-bold text-decoration-underline">Keepr</p>
-      <p>Keepr is a Pinterest clone that allows users to post images with descriptions known as keeps and allows them to save keeps in a collection called vaults. This application was deployed live using docker and an AWS EC2 instance.</p>
-
-      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
-      <section class="row justify-content-around">
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" alt="html symbol" title="C#">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg" alt="html symbol" title="MySQL">
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <section v-else-if="editable == 'All-Spice'" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
-      <img class="w-100 rounded" src="../assets/img/AllSpice.png" alt="AllSpice">
-      <div class="d-flex justify-content-around icon-position">
-        <a href="https://all-spice.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/All_Spice" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-10 col-lg-4">
-      <p class="fs-3 fw-bold text-decoration-underline">All-Spice</p>
-      <p>All-Spice is recipe sharing application where users can post and favorite recipes. All-Spice was deployed live using AWS EC2 instance and docker.</p>
-
-      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
-      <section class="row justify-content-around">
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-plain.svg" alt="html symbol" title="C#">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg" alt="html symbol" title="MySQL">
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <section v-else-if="editable == 'Tower'" class="row justify-content-center bg-nurse p-3">
-    <div class="col-12 col-md-8 col-lg-6 m-3 p-0 position-relative elevation-5">
-      <img class="w-100 rounded" src="../assets/img/Tower.png" alt="Tower">
-      <div class="d-flex justify-content-around icon-position">
-        <a href="https://tower.ewanstubblefield-allen.dev" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
-        <a href="https://github.com/EwanStubblefield-Allen/Checkpoint6" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-10 col-lg-4">
-      <p class="fs-3 fw-bold text-decoration-underline">Tower</p>
-      <p>Tower is and application where users can post upcoming events that allow them to attend events and comment. This was deployed live using AWS EC2 instance.</p>
-
-      <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
-      <section class="row justify-content-around">
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="HTML" title="HTML">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="CSS" title="CSS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" alt="JavaScript" title="JavaScript">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-plain-wordmark.svg" alt="VueJS" title="VueJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg" alt="NodeJS" title="NodeJS">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 py-3 text-center">
-          <img class="img-fluid icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" alt="html symbol" title="MongoDB">
-        </div>
-      </section>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { AppState } from '../AppState'
 
 export default {
   setup() {
-    const editable = ref('Dragon Dungeons')
+    const editable = ref(AppState.portfolio[0].name)
 
     return {
-      editable
+      editable,
+      portfolio: computed(() => AppState.portfolio)
     }
   }
 }

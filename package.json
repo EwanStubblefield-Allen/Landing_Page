@@ -11,9 +11,9 @@
   "dependencies": {
     "@bcwdev/auth0provider-client": "^0.0.13",
     "@emailjs/browser": "^3.11.0",
-    "@unhead/vue": "^1.8.10",
     "@mdi/font": "^7.2.96",
     "@popperjs/core": "^2.11.8",
+    "@unhead/vue": "^1.8.10",
     "@vitejs/plugin-vue": "^4.2.3",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
