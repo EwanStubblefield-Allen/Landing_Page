@@ -21,6 +21,7 @@
     </footer>
   </div>
   <Animation />
+  <ApplicationModal />
 </template>
 
 <script>
@@ -28,6 +29,7 @@ import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import Animation from './components/Animation.vue'
+import ApplicationModal from './components/ApplicationModal.vue'
 
 export default {
   setup() {
@@ -43,7 +45,7 @@ export default {
       }
     }
   },
-  components: { Navbar, Animation }
+  components: { Navbar, Animation, ApplicationModal }
 }
 </script>
 <style lang="scss">
