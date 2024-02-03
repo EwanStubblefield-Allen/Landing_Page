@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body row">
-          <div class="col-12 col-md-8 col-lg-6 mb-2 p-0 position-relative">
+          <div class="col-12 col-lg-8 mb-2 p-0 position-relative">
             <img class="w-100 rounded" :src="application?.img" :alt="application?.name">
             <div class="d-flex justify-content-around icon-position">
               <a :href="application?.url" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
@@ -15,16 +15,19 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-10 col-lg-4">
-            <p :innerHTML="application?.description"></p>
-
+          <div class="col-12 col-lg-4">
             <p class="fs-5 fw-bold text-decoration-underline pt-3">Technologies</p>
             <section class="row justify-content-around">
               <div v-for="t in application?.technologies" :key="t" class="col-6 col-sm-4 col-lg-3 py-3 text-center">
                 <img class="img-fluid icon" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${t[0]}/${t[0]}-plain${t[1]}.svg`" :alt="t" :title="t">
               </div>
             </section>
+            <div class="d-flex flex-wrap justify-content-around w-100">
+              <p v-for="o in application?.other" :key="o" class="bg-corduroy text-nurse mx-1 my-2 px-2 rounded">{{ o }}</p>
+            </div>
           </div>
+
+          <p :innerHTML="application?.description"></p>
         </div>
       </div>
     </div>

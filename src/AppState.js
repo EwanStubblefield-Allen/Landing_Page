@@ -22,7 +22,8 @@ export const AppState = reactive({
         ['vuejs', '-wordmark'],
         ['csharp', ''],
         ['mysql', '-wordmark']
-      ]
+      ],
+      other: ['A.W.S.', 'Axios', 'SignalR', 'DapperORM', 'OpenAi', 'Auth0', 'Bootstrap']
     },
     {
       name: 'CodeFitness',
@@ -37,7 +38,8 @@ export const AppState = reactive({
         ['vuejs', '-wordmark'],
         ['nodejs', '-wordmark'],
         ['mongodb', '-wordmark']
-      ]
+      ],
+      other: ['Render', 'Axios', 'Mongoose', 'Vue Tour', 'Auth0', 'Bootstrap']
     },
     {
       name: 'Keepr',
@@ -53,7 +55,8 @@ export const AppState = reactive({
         ['vuejs', '-wordmark'],
         ['csharp', ''],
         ['mysql', '-wordmark']
-      ]
+      ],
+      other: ['A.W.S.', 'Axios', 'DapperORM', 'Auth0', 'Bootstrap']
     },
     {
       name: 'All-Spice',
@@ -69,7 +72,8 @@ export const AppState = reactive({
         ['vuejs', '-wordmark'],
         ['csharp', ''],
         ['mysql', '-wordmark']
-      ]
+      ],
+      other: ['A.W.S.', 'Axios', 'DapperORM', 'Auth0', 'Bootstrap']
     },
     {
       name: 'Tower',
@@ -85,7 +89,8 @@ export const AppState = reactive({
         ['vuejs', '-wordmark'],
         ['nodejs', '-wordmark'],
         ['mongodb', '-wordmark']
-      ]
+      ],
+      other: ['A.W.S.', 'Axios', 'Mongoose', 'Auth0', 'Bootstrap']
     }
   ],
   application: null

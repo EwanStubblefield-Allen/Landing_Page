@@ -82,6 +82,10 @@ export default {
     background-color: var(--steel);
   }
 
+  .bg-corduroy {
+    background-color: var(--corduroy);
+  }
+
   .text-nurse {
     color: var(--nurse)
   }
