@@ -38,9 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .hero {
-    height: var(--main-height);
-    font-weight: bold;
-    text-shadow: 0px 3px 5px white;
-  }
+.hero {
+  height: var(--main-height);
+  font-weight: bold;
+  text-shadow: 0px 3px 5px white;
+}
 </style>

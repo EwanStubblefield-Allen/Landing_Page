@@ -49,71 +49,71 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import "./assets/scss/main.scss";
+@import "./assets/scss/main.scss";
 
-  :root {
-    --main-height: calc(100vh - 64px);
-    --nurse: #f1f2f1;
-    --boston: #3997ae;
-    --turquoise: #14c6e7;
-    --corduroy: #596d6b;
-    --steel: #1e1c28;
-  }
+:root {
+  --main-height: calc(100vh - 64px);
+  --nurse: #f1f2f1;
+  --boston: #3997ae;
+  --turquoise: #14c6e7;
+  --corduroy: #596d6b;
+  --steel: #1e1c28;
+}
 
-  body {
-    color: var(--steel);
-  }
+body {
+  color: var(--steel);
+}
 
-  main {
-    margin: 0;
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-  }
+main {
+  margin: 0;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+}
 
-  p {
-    margin: 0;
-  }
+p {
+  margin: 0;
+}
 
-  .bg-nurse {
-    background-color: var(--nurse);
-  }
+.bg-nurse {
+  background-color: var(--nurse);
+}
 
-  .bg-steel {
-    background-color: var(--steel);
-  }
+.bg-steel {
+  background-color: var(--steel);
+}
 
-  .bg-corduroy {
-    background-color: var(--corduroy);
-  }
+.bg-corduroy {
+  background-color: var(--corduroy);
+}
 
-  .text-nurse {
-    color: var(--nurse)
-  }
+.text-nurse {
+  color: var(--nurse)
+}
 
-  .text-boston {
+.text-boston {
+  color: var(--boston);
+}
+
+.text-turquoise {
+  color: var(--turquoise)
+}
+
+.banner {
+  height: 4em;
+  width: 4em;
+  border-radius: 10px;
+  text-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .25s;
+}
+
+.banner:hover {
+  transform: scale(1.05) translateY(-2.5px);
+
+  i {
     color: var(--boston);
   }
-
-  .text-turquoise {
-    color: var(--turquoise)
-  }
-
-  .banner {
-    height: 4em;
-    width: 4em;
-    border-radius: 10px;
-    text-shadow: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .25s;
-  }
-
-  .banner:hover {
-    transform: scale(1.05) translateY(-2.5px);
-
-    i {
-      color: var(--boston);
-    }
-  }
+}
 </style>

@@ -63,15 +63,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  button {
-    box-shadow: 0px 3px 5px white;
-  }
+button {
+  box-shadow: 0px 3px 5px white;
+}
 
-  button:hover {
-    transform: scale(1.01);
-  }
+button:hover {
+  transform: scale(1.01);
+}
 
-  #contact {
-    scroll-margin-top: 64px;
-  }
+#contact {
+  scroll-margin-top: 64px;
+}
 </style>

@@ -48,75 +48,75 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .icon {
-    height: 5em;
-    filter: grayscale(1);
-  }
+.icon {
+  height: 5em;
+  filter: grayscale(1);
+}
 
-  .icon:hover {
-    filter: grayscale(0);
-  }
+.icon:hover {
+  filter: grayscale(0);
+}
 
-  .icon-position {
-    height: 120px;
-    width: 100%;
-    position: absolute;
-    top: calc(50% - (120px / 2));
-    left: 0;
+.icon-position {
+  height: 120px;
+  width: 100%;
+  position: absolute;
+  top: calc(50% - (120px / 2));
+  left: 0;
 
-    a {
-      text-shadow: 0px 3px 5px white;
-      font-size: 5em;
-      opacity: 0;
-      transition: .25s;
-    }
-
-    a:hover {
-      color: var(--slate);
-      scale: 1.1;
-    }
-  }
-
-  .position-relative {
-    height: fit-content;
-    border: 2px dashed black;
-    border-radius: 10px;
+  a {
+    text-shadow: 0px 3px 5px white;
+    font-size: 5em;
+    opacity: 0;
     transition: .25s;
   }
 
-  .position-relative:hover {
-    transform: scale(1.05);
+  a:hover {
+    color: var(--slate);
+    scale: 1.1;
+  }
+}
 
-    .mdi-play-box {
-      animation: slideIn .5s ease-in-out forwards;
-    }
+.position-relative {
+  height: fit-content;
+  border: 2px dashed black;
+  border-radius: 10px;
+  transition: .25s;
+}
 
-    .mdi-github {
-      animation: slideIn2 .5s ease-in-out forwards;
-    }
+.position-relative:hover {
+  transform: scale(1.05);
+
+  .mdi-play-box {
+    animation: slideIn .5s ease-in-out forwards;
   }
 
-  @keyframes slideIn {
-    0% {
-      opacity: 0;
-      transform: translateX(-150%);
-    }
+  .mdi-github {
+    animation: slideIn2 .5s ease-in-out forwards;
+  }
+}
 
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-150%);
   }
 
-  @keyframes slideIn2 {
-    0% {
-      opacity: 0;
-      transform: translateX(150%);
-    }
-
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
   }
+}
+
+@keyframes slideIn2 {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
 </style>

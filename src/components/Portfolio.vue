@@ -30,15 +30,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #portfolio {
-    scroll-margin-top: 64px;
-  }
+#portfolio {
+  scroll-margin-top: 64px;
+}
 
-  img {
-    transition: .25s;
-  }
+img {
+  transition: .25s;
+}
 
-  img:hover {
-    transform: scale(1.05);
-  }
+img:hover {
+  transform: scale(1.05);
+}
 </style>

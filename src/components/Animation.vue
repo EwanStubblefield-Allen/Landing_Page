@@ -1,5 +1,5 @@
 <template>
-  <canvas id="canvas" class="position-fixed" width="1400" height="600"></canvas>
+  <canvas id="canvas" class="position-fixed"></canvas>
 </template>
 
 <script>
