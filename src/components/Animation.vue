@@ -12,7 +12,7 @@ export default {
       const canvas = document.getElementById('canvas')
 
       canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      canvas.height = window.innerHeight + 64
 
       // Initialize the GL context
       let gl = canvas.getContext('webgl')
@@ -92,10 +92,10 @@ export default {
 
       function onWindowResize() {
         canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+        canvas.height = window.innerHeight + 64
         gl.viewport(0, 0, canvas.width, canvas.height)
         gl.uniform1f(widthHandle, window.innerWidth)
-        gl.uniform1f(heightHandle, window.innerHeight)
+        gl.uniform1f(heightHandle, window.innerHeight + 64)
       }
 
       //Compile shader and combine with source
