@@ -80,7 +80,7 @@ export const AppState = reactive({
       description:
         'Tower is and application where users can post upcoming events that allow them to attend events and comment. This was deployed live using AWS EC2 instance.',
       img: tower,
-      url: 'https://tower.ewanstubblefield-allen.dev/',
+      // url: 'https://tower.ewanstubblefield-allen.dev/',
       git: 'Checkpoint6',
       technologies: [
         ['html5', '-wordmark'],

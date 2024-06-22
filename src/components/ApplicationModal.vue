@@ -10,7 +10,7 @@
           <div class="col-12 col-lg-8 mb-2 p-0 position-relative">
             <img class="w-100 rounded" :src="application?.img" :alt="application?.name">
             <div class="d-flex justify-content-around icon-position">
-              <a :href="application?.url" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
+              <a :href="application.url" v-if="application.url" target="_blank" class="mdi mdi-play-box text-turquoise rounded selectable" title="Live Page"></a>
               <a :href="`https://github.com/EwanStubblefield-Allen/${application?.git}`" target="_blank" class="mdi mdi-github text-turquoise rounded selectable" title="GitHub Repo"></a>
             </div>
           </div>
