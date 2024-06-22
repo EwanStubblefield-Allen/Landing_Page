@@ -25,10 +25,10 @@
 
       <p>Find Me:</p>
       <div class="d-flex justify-content-around">
-        <a href="https://github.com/EwanStubblefield-Allen" class="banner bg-nurse m-2 elevation-5" target="_blank">
+        <a href="https://github.com/EwanStubblefield-Allen" class="banner bg-nurse m-2 elevation-5" target="_blank" title="My Github Page">
           <i class="mdi mdi-github fs-3 text-turquoise"></i>
         </a>
-        <a href="https://www.linkedin.com/in/ewan-stubblefield-allen/" target="_blank" class="banner bg-nurse m-2 elevation-5">
+        <a href="https://www.linkedin.com/in/ewan-stubblefield-allen/" target="_blank" class="banner bg-nurse m-2 elevation-5" title="My LinkedIn Page">
           <i class="mdi mdi-linkedin fs-3 text-turquoise"></i>
         </a>
       </div>
